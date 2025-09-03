@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #000;
+  color: #fff;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ===== HEADER ===== */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.5rem 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(6px);
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.logo {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #ce0462;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.logo:hover {
+  transform: scale(1.1);
+}
+
+nav a {
+  font-size: 1.6rem;
+  margin-left: 3rem;
+  color: #fff;
+  position: relative;
+  transition: 0.3s ease;
+}
+nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 3px;
+  background: #ce0462;
+  transition: width 0.3s;
+}
+nav a:hover::after,
+nav a.active::after {
+  width: 100%;
+}
+
+/* ===== SEÇÕES ===== */
+section {
+  min-height: 100vh;
+  padding: 10rem 8% 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h3 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  color: #ce0462;
+  border-left: 4px solid #ce0462;
+  padding-left: 1.2rem;
+}
+
+p {
+  font-size: 1.7rem;
+  color: #ddd;
+  margin-bottom: 1.5rem;
+}
+
+/* ===== HOME ===== */
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+  flex-wrap: wrap;
+}
+
+.home-img img {
+  width: 30rem;
+  border-radius: 5%;
+  border: 4px solid #ce0462;
+  box-shadow: 0 0 25px #ce0462;
+  animation: fadeIn 4s ease;
+  transition: transform 0.3s;
+}
+.home-img img:hover {
+  transform: scale(1.05);
+}
+
+.home-content h1 {
+  font-size: 5rem;
+  font-weight: 700;
+}
+.home-content h3 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin: 1rem 0;
+}
+span {
+  color: #ce0462;
+}
+.home-content p {
+  max-width: 600px;
+  font-size: 1.6rem;
+}
+
+/* Social Icons */
+.social-icons {
+  margin: 2.5rem 0;
+}
+.social-icons a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 4.5rem;
+  height: 4.5rem;
+  margin-right: 1rem;
+  border-radius: 50%;
+  border: 2px solid #ce0462;
+  font-size: 2rem;
+  color: #ce0462;
+  transition: all 0.3s ease;
+}
+.social-icons a:hover {
+  background: #ce0462;
+  color: #fff;
+  transform: scale(1.2) translateY(-3px);
+  box-shadow: 0 0 15px #ce0462;
+}
+
+/* Botão */
+.btn {
+  display: inline-block;
+  padding: 1rem 3rem;
+  border-radius: 3rem;
+  border: 2px solid #ce0462;
+  color: #ce0462;
+  font-size: 1.6rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.btn:hover {
+  background: #ce0462;
+  color: #fff;
+  box-shadow: 0 0 20px #ce0462;
+}
+
+/* ===== HABILIDADES ===== */
+#habilidades ul {
+  margin-top: 1.5rem;
+  list-style: none;
+}
+#habilidades li {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  padding-left: 1rem;
+  position: relative;
+}
+#habilidades li::before {
+  content: "✔";
+  color: #ce0462;
+  position: absolute;
+  left: -1.5rem;
+}
+
+/* ===== PROJETOS ===== */
+.projetos-grid {
+  display: grid;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background: #111;
+  padding: 2rem;
+  border-radius: 1.2rem;
+  border: 1px solid #ce0462;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card h4 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+.card p {
+  font-size: 1.5rem;
+  color: #bbb;
+}
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 25px rgba(206, 4, 98, 0.7);
+}
+
+/* ===== EXPERIÊNCIAS ===== */
+#experiencias ul {
+  margin-top: 1.5rem;
+  list-style: disc;
+  padding-left: 2rem;
+}
+#experiencias li {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  color: #ccc;
+}
+
+/* ===== ANIMAÇÕES ===== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 991px) {
+  html { font-size: 55%; }
+  nav { 
+    display: none; 
+    flex-direction: column; 
+    background: #111; 
+    position: absolute; 
+    top: 100%; 
+    right: 0; 
+    width: 220px; 
+    border-left: 2px solid #ce0462;
+  }
+  nav a {
+    margin: 1.5rem;
+    font-size: 1.8rem;
+  }
+  .menu-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 20px;
+    cursor: pointer;
+  }
+  .menu-icon span {
+    display: block;
+    height: 3px;
+    background: #ce0462;
+    border-radius: 2px;
+  }
+  #menu-toggle:checked ~ nav {
+    display: flex;
+  }
+}
+#menu-toggle {
+  display: none;
+  visibility: hidden;
+  position: absolute;
+  left: -9999px;
+}
